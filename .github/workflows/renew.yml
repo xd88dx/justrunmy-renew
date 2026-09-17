@@ -1,9 +1,10 @@
 name: JustRunMy
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '5 3 * * *'
+    # 每天 UTC 0点 (北京时间 8点) 运行
+    - cron: '15 0 */2 * *'
+  workflow_dispatch: # 允许手动触发
 
 permissions:
   contents: write
